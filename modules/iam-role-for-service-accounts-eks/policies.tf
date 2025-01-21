@@ -548,13 +548,14 @@ data "aws_iam_policy_document" "external_secrets" {
   }
 
   statement {
-    actions   = ["secretsmanager:ListSecrets", "secretsmanager:BatchGetSecretValue"]
+    actions   = ["secretsmanager:ListSecrets"]
     resources = ["*"]
   }
 
   statement {
     actions = [
       "secretsmanager:GetResourcePolicy",
+      "secretsmanager:BatchGetSecretValue",
       "secretsmanager:GetSecretValue",
       "secretsmanager:DescribeSecret",
       "secretsmanager:ListSecretVersionIds"
