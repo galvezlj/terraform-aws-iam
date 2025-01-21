@@ -199,7 +199,7 @@ variable "external_secrets_ssm_parameter_arns" {
 variable "additional_parameter_permissions" {
   description = "List of additional SM Parameter Store permissions to assign"
   type        = list(string)
-  default.    = []
+  default     = []
 }
 
 variable "external_secrets_secrets_manager_arns" {
