@@ -196,6 +196,12 @@ variable "external_secrets_ssm_parameter_arns" {
   default     = ["arn:aws:ssm:*:*:parameter/*"]
 }
 
+variable "additional_parameter_permissions" {
+  description = "List of additional SM Parameter Store permissions to assign"
+  type        = list(string)
+  default.    = []
+}
+
 variable "external_secrets_secrets_manager_arns" {
   description = "List of Secrets Manager ARNs that contain secrets to mount using External Secrets"
   type        = list(string)

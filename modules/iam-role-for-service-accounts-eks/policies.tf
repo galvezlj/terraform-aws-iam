@@ -540,10 +540,10 @@ data "aws_iam_policy_document" "external_secrets" {
   }
 
   statement {
-    actions = [
+    actions = concat([
       "ssm:GetParameter",
       "ssm:GetParameters",
-    ]
+    ], var.additional_parameter_permissions)
     resources = var.external_secrets_ssm_parameter_arns
   }
 
